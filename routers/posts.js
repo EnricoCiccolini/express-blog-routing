@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const posts = require('../posts')
-console.log(posts)
+
 
 
 router.get('/', function (req, res) {
@@ -14,8 +14,9 @@ router.get('/:id', function (req, res) {
    // res.send('dettagli del dolce n' + req.params.id)
   const param = req.params.id
   const result = posts.find(({ slug }) => slug === param);
-  res.json(result)
+  result ? res.json(result) : res.send('dolce non trovato')
 })
+  
 
 
 router.post('/', function (req, res) {
