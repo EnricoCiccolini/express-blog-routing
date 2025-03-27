@@ -1,5 +1,4 @@
 const express = require('express')
-const posts = require('./posts')
 const app = express()
 const port = 3002
 const postsRouter = require('./routers/posts')
